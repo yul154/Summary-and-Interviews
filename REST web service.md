@@ -37,3 +37,58 @@ An AuthenticationManager can do one of 3 things in its authenticate() method:
 -return null if it can’t decide.
 
 
+REST API
+
+* difference betweenn rest and soap
+1.SOAP is a protocol. REST is an architectural style.
+2. SOAP web services and client programs are bind with WSDL contract,REST doesn't have any contract defined between server and client
+3. REST permits many different data formats including plain text, HTML, XML, and JSON, which is a great fit for data and yields more browser compatibility; SOAP only uses XML.
+4. REST calls can be cached, SOAP-based calls cannot be cached.
+5. SOAP web services are hard to maintain, any change in WSDL contract requires us to create client stubs again,REST web services are easy to maintain when compared to SOAP, a new method can be added without any change at client side for existing resources.
+6. SOAP is more secure than REST as it uses WS-Security for transmission along with Secure Socket Layer.
+
+* features of RESTful web services.
+
+1. Based on the Client-Server representation.
+2. Based on the concept of statelessness where every client request and the response is independent of the other with complete assurance of providing required information.
+3. Uses the concept of caching.
+
+* @pathvariable and @requestparam
+1. @RequestParam used for accessing the values of the query parameters , @PathVariable used for accessing the values from the URI template.
+
+* Statelessness
+ a RESTful Web Service should not keep a client state on the server. This restriction is called Statelessness
+1. Any previous communication with the client and server is not maintained and thus the whole process is very much simplified.
+2. Every method required for communication is identified as an independent method i.e. there are no dependencies to other methods.
+
+* whar is payload
+ The request data which is present in the body part of every HTTP message is referred to as ‘Payload’. In Restful web service, the payload can only be passed to the recipient through the POST method.
+
+
+* What is Caching?
+
+ Caching is the process in which server response is stored so that a cached copy can be used when required and there is no need for generating the same response again
+
+ *  What is a ‘Resource’?
+ Just like the ‘Object’ instance, we have learned in Object Orient Programming Language, in the same way, ‘Resource’ is defined as an object of a type which can be an image, HTML file, text data, and any type of dynamic data.
+
+* Is there any difference between PUT and POST operations? Explain it.
+A PUT operation is idempotent while the POST operation can give a different result.
+the same PUT request multiple times will always produce the same result(that is no side effect), while on the other hand, calling a POST request repeatedly may have (additional) side effects of creating the same resource multiple times.
+
+
+*  What is URI? Explain its purpose in REST-based web services. What is its format?
+
+URI stands for Uniform Resource Identifier. URI is the identifier for the resource in REST architecture.
+
+The purpose of a URI is to locate a resource(s) on the server hosting the web service. A URI is of the following format-
+
+<protocol>://<service-name>/<ResourceType>/<ResourceID>
+
+* HTTP status code
+1. Informational responses (100–199), 100 Continue,101 Switching Protocols
+2. Successful responses (200–299),200 OK,201 Created
+3. Redirects (300–399),300 Multiple Choices
+4. Client errors (400–499), 400 Bad Request,404 Not Found,403 Forbidden,405 Method Not Allowed
+5. Server errors (500–599).500 Internal Server Error,503 Service Unavailable,504 Gateway Timeout
+
