@@ -1,4 +1,4 @@
-Hibernate
+# Hibernate
 
 ## What is Hibernate
 Object-relational mapping or ORM is the programming technique to map application domain model objects to the relational database tables. Hibernate is java based ORM tool that provides framework for mapping application domain objects to the relational database tables and vice versa.
@@ -141,4 +141,53 @@ hibernate.connection.autocommit
 maximum number of pooled connections
 Allows autocommit mode to be used for the JDBC connection.
 ``` 
+---
 
+# JPA
+
+## How you will write custom method in the repository in Spring Data JPA? What are rules to define Query methods
+1. The name of the query method must start with findBy or getBy  or queryBy or countBy or readBy prefix. The findBy is mostly used by the developer.
+2. We can write the query method using multiple fields using predefined keywords(eg. And, Or etc) but these keywords are case sensitive
+3. While using findBy or getBy or queryBy or countBy or readBy the character B must be in capital letter,else we will get an exception while deployment.
+4. The first character of field name should capital letter.
+
+## What are the important predefined repository interfaces and classes in Spring Data JPA?
+
+* Repository – Top-level interface defined in Spring Data Hierarchy. This is a marker interface i.e doesn’t contain any method.
+* CrudRepository – The CrudRepository interface extends Repository interface, provides methods to perform CRUD operatio
+* PagingAndSortingRepository – The PagingAndSortingRepository interface extends CrudRepository interface and provides additional methods to retrieve entities using the pagination and sorting.
+* JpaRepository – The JpaRepository interface extends PagingAndSortingRepository and QueryByExampleExecutor interface, provides some additional batch methods. See more details here.
+
+## What are the important methods of Crudrepository to perform CRUD operations in Spring Data JPA?
+* save(S entity) – Used to save a single entity at a time. 
+* saveAll(Iterable<S> – we can save multiple entities at a time.
+* findById(ID id) – Use to get entity basis of id
+* existsById(ID id) – Used to check whether an entity is already exited in DB for given Id.
+* findAll() – Find all entity of particular type.
+* findAllById(Iterable<ID> ids)  – Return all entity of given ids.
+* count() – Returns the number of entities.
+* deleteById(ID id) – Delete the entity on basis of id
+* delete(T entity) – delete the entity which one we are passing
+* deleteAll() – delete all entities
+  
+## Difference between CrudRepository and JpaRepository in Spring Data JPA?
+*  CrudRepository extends Repository interface.JpaRepository extends PagingAndSortingRepository
+*  CrudRepository provides methods to perform CRUD operations.JpaRepository provides additional methods like flush(), saveAndFlush(), deleteInBatch()
+*  The saveAll(Iterable entities)  method of CrudRepository returns Iterable.	The saveAll(Iterable entities)  method of JpaRepository returns List.
+*  If we have to perform mainly CRUD operation, define our repository using CrudRepository.	If we have to perform CRUD as well as Batch operation define our repository extending JpaRepository.
+
+##  What are the features/benefits of Spring Data JPA?
+
+* Spring Data JPA provides features to Query creation from method names.
+* Using Spring Data Jpa we can remove a lot of code by creating an abstract repository class that provides CRUD operations for our entities.
+* Spring Data Jpa provides PagingAndSortingRepository interface for sorting and pagination support
+
+
+## How to enable Spring Data JPA features.
+* First, we need to define some configuration class let’s say JpaConfig.java and then we need to use @EnableJpaRepositories annotation with that class.
+
+## Difference between findById() and getOne() in Spring Data JPA?
+* The findById() method is available in CrudRepository interface.	 The getOne() method is available in JpaRepositpry interface.
+* The findById() method will return null if the record doesn’t exist in the database.	The getOne() method throw EntityNotFoundException if the record doesn’t exist in the database.
+* Internally findById() method use EntityManger find() method.	3. Internally getOne() method use EntityManger getReference() method.
+* Calling findById() returns a eager fetched entity.	4. Calling getOne() returns a lazily fetched entity.
