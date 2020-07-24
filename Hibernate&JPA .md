@@ -159,6 +159,7 @@ Allows autocommit mode to be used for the JDBC connection.
 * JpaRepository – The JpaRepository interface extends PagingAndSortingRepository and QueryByExampleExecutor interface, provides some additional batch methods. See more details here.
 
 ## What are the important methods of Crudrepository to perform CRUD operations in Spring Data JPA?
+
 * save(S entity) – Used to save a single entity at a time. 
 * saveAll(Iterable<S> – we can save multiple entities at a time.
 * findById(ID id) – Use to get entity basis of id
@@ -184,9 +185,11 @@ Allows autocommit mode to be used for the JDBC connection.
 
 
 ## How to enable Spring Data JPA features.
+
 * First, we need to define some configuration class let’s say JpaConfig.java and then we need to use @EnableJpaRepositories annotation with that class.
 
 ## Difference between findById() and getOne() in Spring Data JPA?
+
 * The findById() method is available in CrudRepository interface.	 The getOne() method is available in JpaRepositpry interface.
 * The findById() method will return null if the record doesn’t exist in the database.	The getOne() method throw EntityNotFoundException if the record doesn’t exist in the database.
 * Internally findById() method use EntityManger find() method.	3. Internally getOne() method use EntityManger getReference() method.
