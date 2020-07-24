@@ -118,11 +118,11 @@ LAZY loading is used in cases where the related entity size is huge and it's not
 
 
 ## Hibernate HQL vs SQL
-Hibernate Query Language (HQL). It’s very similar to SQL except that we use Objects instead of table names, that makes it more close to object oriented programming.
-SQL is based on relational database model whereas HQL is a combination of OOPS with Relational database concept.
-SQL manipulates data stored in tables and modifies its rows and columns while HQL is concerned about objects and its properties.
-SQL is concerned about the relationship that exists between two tables while HQL is concerned about relation between objects.
-At the end HQL Queries converted into SQL Queries.
+* Hibernate Query Language (HQL). It’s very similar to SQL except that we use Objects instead of table names, that makes it more close to object oriented programming.
+* SQL is based on relational database model whereas HQL is a combination of OOPS with Relational database concept.
+* SQL manipulates data stored in tables and modifies its rows and columns while HQL is concerned about objects and its properties.
+* SQL is concerned about the relationship that exists between two tables while HQL is concerned about relation between objects.
+* At the end HQL Queries converted into SQL Queries.
 Note: Hibernate runs on top of JDBC driver.
 
 
