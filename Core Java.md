@@ -127,6 +127,11 @@ Collection framework implements various interfaces, Collection interface and Map
 # Multithreading 
 * Have you use multithread
 * How to keep your thread safe
+
+
+
+
+
 ---
 # Exception Handling 
 
@@ -150,6 +155,9 @@ Collection framework implements various interfaces, Collection interface and Map
 * throw keyword can throw only one exception at a time.throws keyword can be used to declare multiple exceptions,
 * throw keyword we can propagate only unchecked exception, Checked exception can be propagated with throws.
 
+## How Can We Write a Custom Exception in Java?
+* Make the class extends one of the exceptions 
+* Create a constructor with a String parameter, which is the detail message of the exception
 
 ---
 
