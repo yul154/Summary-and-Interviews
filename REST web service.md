@@ -1,15 +1,14 @@
 # Rest Web Service
 
 #  Difference betweenn rest and soap
-1.SOAP is a protocol. REST is an architectural style.
+
+1. SOAP is a protocol. REST is an architectural style.
 2. SOAP web services and client programs are bind with WSDL contract,REST doesn't have any contract defined between server and client
 3. REST permits many different data formats including plain text, HTML, XML, and JSON, which is a great fit for data and yields more browser compatibility; SOAP only uses XML.
 4. REST calls can be cached, SOAP-based calls cannot be cached.
 5. SOAP web services are hard to maintain, any change in WSDL contract requires us to create client stubs again,REST web services are easy to maintain when compared to SOAP, a new method can be added without any change at client side for existing resources.
 6. SOAP is more secure than REST as it uses WS-Security for transmission along with Secure Socket Layer.
 
-
-## Give you business logic and database, you are going to design a rest service to find all book name and insert book name and update book name
 
 
 # Rest characteristics
