@@ -1,6 +1,18 @@
 # Rest Web Service
 
-#  Difference betweenn rest and soap
+# What is REST API?
+
+ * Representational State Transfer a.k.a REST is an architectural style as well as an approach for communications purpose that is often used in various web services development.
+ * It defines a set of principles that a system must comply with in order to get some benefits such as loose coupling between the client and the server, scalability, reliability, and better performance.
+ * In REST architecture, a REST Server simply provides access to resources and REST client accesses and modifies the resources. Here each resource is identified by URIs/ global IDs. 
+ * REST uses various representation to represent a resource like text, JSON, XML. JSON is the most popular one.
+ 
+In most cases, the design of a so-called RESTful API consists of:
+ * defining the resources accessible via HTTP
+ * identifying such resources with URLs
+ * mapping the CRUD (Create, Retrieve, Update, Delete) operations on these resources to the standard HTTP methods (POST, GET, PUT, DELETE)
+
+##  Difference betweenn rest and soap
 
 1. SOAP is a protocol. REST is an architectural style.
 2. SOAP web services and client programs are bind with WSDL contract,REST doesn't have any contract defined between server and client
@@ -13,11 +25,15 @@
 
 # Rest characteristics
 
-1. It is stateless: This is the most important characteristic of a REST service. A REST HTTP request consists of all the data needed by the server to understand and give back the response. Once a request is served, the server doesn't remember if the request has arrived after a while. So the operation will be a stateless one.
-2. It supports JSON and XML
-3. It is simpler than SOAP
+1. It is stateless: In REST applications, each request must contain all of the information necessary to be understood by the server, rather than be dependent on the server remembering prior requests.The server does not store any state about the client session on the server-side. Statelessness enables greater scalability since the server does not have to maintain, update or communicate that session state
+
+2.Uniform Interface: constraint defines the interface between clients and servers. It simplifies and decouples the architecture, which enables each part to evolve independently. 
+
+
 4. Client-server based architecture :Client/server architecture is a computing model in which the server hosts, delivers and manages most of the resources and services to be consumed by the client. This type of architecture has one or more client computers connected to a central server over a network or internet connection. This system shares computing resources.
-5. Cacheable : Many developers think a technology stack is blocking their web application or API. But in reality, their architecture is the reason. The database can be a potential tuning piece in a web application. In order to scale an application well, we need to cache content and deliver it as a response. If the cache is not valid, it is our responsibility to bust it. REST services should be properly cached for scaling.
+
+5. Cacheable : As the clients can cache responses, they need to be implicitly or explicitly defined as cacheable or not to prevent clients from reusing state or inappropriate data in response to further requests. 
+
 6. Multiple layered system : The REST API can be served from multiple servers. One server can request the other, and so forth. So when a request comes from the client, request and response can be passed between many servers to finally supply a response back to the client. This easily implementable multi-layered system is always a good strategy for keeping the web application loosely coupled.
 7. Representation of resources : The REST API provides the uniform interface to talk to. It uses a Uniform Resource Identifier (URI) to map the resources (data). It also has the advantage of requesting a specific data format as the response. The Internet Media Type (MIME type) can tell the server that the requested resource is of that particular type.
 
