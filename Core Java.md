@@ -126,12 +126,63 @@ Collection framework implements various interfaces, Collection interface and Map
 ---
 # Multithreading 
 * Have you use multithread
-* How to keep your thread safe
+## What is multithreading?
+* two or more threads run concurrently
+
+## Java Thread status
+* NEW - A thread that has not yet started is in this state.
+* RUNNABLE - A thread executing in the Java virtual machine is in this state.
+* BLOCKED - A thread that is blocked waiting for a monitor lock is in this state.
+* WAITING - A thread that is waiting indefinitely for another thread to perform a particular action is in this state.
+* TIMED_WAITING - A thread that is waiting for another thread to perform an action for up to a specified waiting time is in this state.
+* TERMINATED - A thread that has exited is in this state.
+
+## Thread Life-cycle
+* New
+* Runnable
+* Running
+* Non-Runnable (Blocked)
+* Terminated
+
+## How to create a thread
+1. implement Runnable interface
+2. extends Thread class
+
+## The difference between the Runnable and Callable interfaces in Java
+* Callable(): represents a task that is intended to be executed concurrently by a separate thread.
+* A Callable can return a value but a Runnable cannot.
+* A Callable can throw checked exception but a Runnable cannot.
+
+## synchronized vs unsynchronized java
+
+* Synchronized: only one thread can operate at same time
+* Threadsafe: a method or class instance can be used by multiple threads at the same time without any problems occurring
 
 
+## Differentiate between process and thread?
+* threads (of the same process) run in a shared memory space, while processes run in separate memory spaces.
+* Process means any program is in execution
+* Thread is the segment of a process means a process can have multiple threads and these multiple threads are contained within a process.
 
+## How to keep your thread safe
+* Adding synchronized to this method
+* synchronized blocks： By putting a lock inside a synchronized block, you make sure that only one thread at a time can execute this section
+* Immutable class: we can create thread-safe classes by making them immutable.
+* Volatile keyword in Java can also be used to instruct thread not to cache variables 
+* Read-only or final variables in Java are also thread-safe in Java.
 
+## What are differences between wait and sleep method in Java?
+* Wait() releases the lock on an object , sleep() does not release lock on an object 
+* Wait() is used for inter-thread communication while sleep() is used to introduce pause on execution.
 
+## What is a volatile keyword in Java? How to use it? How is it different from the synchronized method in Java?
+* Volatile in java is a keyword which is used in variable declaration only and cannot be used with method. 
+* synchronization keyword is used in method declaration or can be used to create synchronization blocks.
+* Volatile variables are lock free which means that it does require any lock on variable or object whereas synchronized requires lock on method or block .
+* 
+
+## Join
+* Thread class provides the join() method which allows one thread to wait until another thread completes its execution.
 ---
 # Exception Handling 
 
