@@ -161,11 +161,11 @@ Allows autocommit mode to be used for the JDBC connection.
 ## What are the important methods of Crudrepository to perform CRUD operations in Spring Data JPA?
 
 * save(S entity) – Used to save a single entity at a time. 
-* saveAll(Iterable<S> – we can save multiple entities at a time.
+* saveAll(Iterable) – we can save multiple entities at a time.
 * findById(ID id) – Use to get entity basis of id
 * existsById(ID id) – Used to check whether an entity is already exited in DB for given Id.
 * findAll() – Find all entity of particular type.
-* findAllById(Iterable<ID> ids)  – Return all entity of given ids.
+* findAllById(Iterable ids)  – Return all entity of given ids.
 * count() – Returns the number of entities.
 * deleteById(ID id) – Delete the entity on basis of id
 * delete(T entity) – delete the entity which one we are passing
