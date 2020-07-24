@@ -1,14 +1,22 @@
 Spring 
 
-* Why do you use spring framework
-* What's the different type of autowire,what's the default type
+## Why do you use spring framework
+* Dependency injection is a programming technique that makes a class independent of its dependencies. 
+* It achieves that by decoupling the usage of an object from its creation. That principle improves the reusability of your code and limits the ripple effect if you need to change lower level classes. But even if you implement it perfectly, you still keep a dependency on the lower level class. The interface only decouples the usage of the lower level class but not its instantiation. At some place in your code, you need to instantiate the implementation of the interface. That prevents you from replacing the implementation of the interface with a different one.The goal of the dependency injection technique is to remove this dependency by separating the usage from the creation of the object. This reduces the amount of required boilerplate code and improves flexibility.
+
+
+# What's the different type of autowire,what's the default type
+* ByName
+* ByType
+
+
 * What's unqile exception for same type autwoire injection
 
 * How do you work with Java-based configuration
 * How to you pass the configuration parameter in spring container
 * What is componet scanning 
 
-Spring Boot
+# Spring Boot
 
 * Spring Boot advantage
 1. auto configuration: Convention over configuration 
@@ -24,8 +32,6 @@ Spring Boot
 
 3. @ComponentScan : @ComponentScan without arguments indicates Spring to scan the current package and all of its sub-packages.
 
-
-Dependency injection is a programming technique that makes a class independent of its dependencies. It achieves that by decoupling the usage of an object from its creation. That principle improves the reusability of your code and limits the ripple effect if you need to change lower level classes. But even if you implement it perfectly, you still keep a dependency on the lower level class. The interface only decouples the usage of the lower level class but not its instantiation. At some place in your code, you need to instantiate the implementation of the interface. That prevents you from replacing the implementation of the interface with a different one.The goal of the dependency injection technique is to remove this dependency by separating the usage from the creation of the object. This reduces the amount of required boilerplate code and improves flexibility.
 
 
 # Spring mvc
