@@ -1,6 +1,7 @@
 # Hibernate
 
 ## What is Hibernate
+
 Object-relational mapping or ORM is the programming technique to map application domain model objects to the relational database tables. Hibernate is java based ORM tool that provides framework for mapping application domain objects to the relational database tables and vice versa.
 
 We can use Hibernate persistence API for CRUD operations. Hibernate framework provide option to map plain old java objects to traditional database tables with the use of JPA annotations as well as XML based configuration.
@@ -15,10 +16,12 @@ JPA stands for Java Persistence API. It defines a persistence model for object-r
 
 2. database independency - Hibernate abstracts the SQL queries using higher-level Hibernate Query Language, this allows us to write the same queries independent of the database independently.
 
+
 3. Hibernate cache helps us in getting better performance:  If you application uses a lot of static data then caching would be a good option and hibernate support caching transparently.
 
 4. Lazy Loading: Lazy Loading means that every time you load an object, hibernate will not load all it's related objects but instead will provide place holders which will be resolved as soon as you try to access them
 
+ 5. Hibernate framework provides support for XML as well as JPA annotations, that makes our code implementation independent.
 
 ## Hibernate pros and cons
 
@@ -180,13 +183,18 @@ Allows autocommit mode to be used for the JDBC connection.
 ##  What are the features/benefits of Spring Data JPA?
 
 * Spring Data JPA provides features to Query creation from method names.
-* Using Spring Data Jpa we can remove a lot of code by creating an abstract repository class that provides CRUD operations for our entities.
+* Using Spring Data Jpa provides predefined repository methods to perform CRUD operation. 
+* by implementing one of the Repository interfaces, the DAO will already have some basic CRUD methods (and queries) defined and implemented.
+* remove the DAO implementations entirely
+* As a developer you write your repository interfaces, including custom finder methods, and Spring will provide the implementation automatically.
+* Spring Data JPA need not write an implementation of the repository interface. Spring Data JPA creates an implementation when you run the application.
 * Spring Data Jpa provides PagingAndSortingRepository interface for sorting and pagination support
 
 
 ## How to enable Spring Data JPA features.
 
-* First, we need to define some configuration class let’s say JpaConfig.java and then we need to use @EnableJpaRepositories annotation with that class.
+* First, we need to define some configuration class let’s say JpaConfig.java and 
+* then we need to use @EnableJpaRepositories annotation with that class.
 
 ## Difference between findById() and getOne() in Spring Data JPA?
 
