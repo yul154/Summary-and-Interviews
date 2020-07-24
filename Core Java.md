@@ -128,9 +128,28 @@ Collection framework implements various interfaces, Collection interface and Map
 * Have you use multithread
 * How to keep your thread safe
 ---
-# Exception Handling
+# Exception Handling 
 
-* What's the check exception and uncheck exception.
+## Different Erro and Exception
+
+* The error indicates a problem that mainly occurs due to the lack of system resources and our application should not catch these types of problems
+* Exceptions are the problems which can occur at runtime and compile time. It mainly occurs in the code written by the developers
+
+* Common errors: `java.lang.StackOverflowError`, `java.lang.OutOfMemoryError`
+* Common Excepetions: Unchecked- `ArrayIndexOutOfBoundException`,`NullPointerException`, `ArithmeticException`.Checked - `IOException`,`FileNotFoundException`
+
+## What's the check exception and uncheck exception.
+
+* checked exceptions are forced by compiler and used to indicate exceptional conditions that are out of the control of the program (for example, I/O errors), 
+* unchecked exceptions are occurred during runtime and used to indicate programming errors 
+
+## The differences between throw and throws 
+* throws clause is used to declare an exception, throw keyword is used to throw an exception explicitly.
+* throw is followed by an instance variable and throws is followed by exception class names.
+* Throws is used with the method signature.Throw is used within the method.
+* throw keyword can throw only one exception at a time.throws keyword can be used to declare multiple exceptions,
+* throw keyword we can propagate only unchecked exception, Checked exception can be propagated with throws.
+
 
 ---
 
