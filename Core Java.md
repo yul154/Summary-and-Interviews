@@ -54,16 +54,16 @@ Collection framework implements various interfaces, Collection interface and Map
 
 ## How hash map work internally ? What's hash algorithm what's the output of hash function, what's the hash function. 
 
-* HashMap in Java works on hashing principles. It is a data structure which allows us to store object and retrieve it in constant time O(1) 
-* In hashing, hash functions are used to link key and value in HashMap.
+* HashMap works on the principle of Hashing.
+* HashMap get(Key k) method calls hashCode method on the key object and applies returned hashValue to its own static hash function to find a bucket location
 
 ## what's hash function
 * a function which when given a key, generates an address of given value.
 
 ## Different key with hash function produce same value. How to solve the solutions. 
-* two different objects will be stored in the same array location called a bucket.
+* If two keys of HashMap return the same hash code, then they will end up in the same bucket; hence collision will occur. They will be stored in a linked list together.
 * handles the collision resolution by using the concept of chaining
-* When multiple keys end up in same hash code which is present in same bucket. it stores the values in a linked list
+* equals() will be used to distinguish them. Each bucket can contain a list of objects with the same hash code.
 
 ## Do you know contract between equal() and hash() methods, what's the default implementation of equal()
 * If two objects are equal, then they must have the same hash code.
@@ -220,3 +220,20 @@ Class loader method
 * loadClass(String name, boolean resolve): This method is used to load the classes which are referenced by the JVM. It takes the name of the class as a parameter. This is of type loadClass(String, boolean).
 
 
+## What's design patterns you used
+
+```
+In my project I had used MVC, Singleton, Factory, Iterator and Template pattern.
+The project divided into 3 section UI, Business, Data Access layer.
+MVC Pattern: I had used at the presentation so model separated by controller.
+Singleton Pattern: To share common data access throughout the application.
+Factory Pattern: Between each layer for decoupling and centralizing object creation to avoid code complication.
+Iterator Pattern: For Providing tight encapsulation through middle tier object.
+Observer Pattern: For Sending notification to subscribed users.
+Facade Pattern: For delegating client requests to appropriate subsystem objects eg. The consumer calls one number and speaks with a customer service representative. The customer service representative acts as a Facade, providing an interface to the order fulfillment department, the billing department, and the shipping department.
+Template Pattern: For consistence vocabulary and naming convention for business objects.
+```
+* Singleton: used to limit creation of a class to only one object. when one (and only one) object is needed to coordinate actions across the system.
+* Factory Pattern: it does so without specifying the exact class of the object to be created. To accomplish this, objects are created by calling a factory method instead of calling a constructor. without necessarily knowing what kind of object it creates or how to create it.
+* Observer: one-to-many dependency between objects so that when one object changes state, all its dependents are notified.It is used when there is one to many relationship between objects such as if one object is modified, its dependent objects are to be notified automatically and corresponding changes are done to all dependent objects.
+* An Adapter pattern:  acts as a connector between two incompatible interfaces that otherwise cannot be connected directly
