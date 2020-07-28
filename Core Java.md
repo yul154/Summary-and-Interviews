@@ -54,13 +54,25 @@ Collection framework implements various interfaces, Collection interface and Map
 
 ## How hash map work internally ? What's hash algorithm what's the output of hash function, what's the hash function. 
 
-* HashMap works on the principle of Hashing.
-* HashMap get(Key k) method calls hashCode method on the key object and applies returned hashValue to its own static hash function to find a bucket location
+HashMap in Java works on hashing principles. It is a data structure which allows us to store object and retrieve it in constant time O(1) provided we know the key. In hashing, hash functions are used to link key and value in HashMap. Objects are stored by calling put(key, value) method of HashMap and retrieved by calling get(key) method. When we call put method, the hashcode() method of the key object is called so that the hash function of the map can find a bucket location to store value object.
+
+## How does HashSet is implemented in Java, How does it use Hashing?
+
+* HashSet is built on top of HashMap. If you look at source code of java.util.HashSet class, you will find that that it uses a HashMap with same values for all keys, 
+
+* HashSet uses HashMap internally to store it’s objects. Whenever you create a HashSet object, one HashMap object associated with it is also created. This HashMap object is used to store the elements you enter in the HashSet. The elements you add into HashSet are stored as keys of this HashMap object. The value associated with those keys will be a constant.
+
 
 ## what's hash function
 * a function which when given a key, generates an address of given value.
 
 ## Different key with hash function produce same value. How to solve the solutions. 
+* at some point in time hash function will return the same bucket location for two different keys, this is called collision in HashMap
+* In this case, a linked list is formed at that bucket location and a new entry is stored as the next node.
+*  If we try to retrieve an object from this linked list, we need an extra check to search the correct value, this is done by equals() method
+* HashMap keeps comparing entry's key object with the passed key using equals() and when it returns true, Map returns the corresponding value.
+
+
 * If two keys of HashMap return the same hash code, then they will end up in the same bucket; hence collision will occur. They will be stored in a linked list together.
 * handles the collision resolution by using the concept of chaining
 * equals() will be used to distinguish them. Each bucket can contain a list of objects with the same hash code.
@@ -74,10 +86,17 @@ Collection framework implements various interfaces, Collection interface and Map
 ##  Why use hashmap
 * HashMap are efficient for locating a value based on a key and inserting and deleting values based on a key
 
+## What is the difference between HashMap and HashSet? 
+
+
 ## What is the difference between Comparable and Comparator?
 * Comparable provides only one sort of sequence.The Comparator provides multiple sorts of sequences.
 * It provides one method named compareTo().It provides one method named compare().
 * The logic of sorting must be in the same class whose object you are going to sort.The logic of sorting should be in separate class to write different sorting based on different attributes of objects.
+
+## How do you Sort objects on the collection?
+
+Sorting is implemented using Comparable and Comparator in Java and when you call Collections.sort() it gets sorted based on the natural order specified in compareTo() method while Collections.sort(Comparator) will sort objects based on compare() method of Comparator. 
 
 ---
 # Object Oriented Programming
