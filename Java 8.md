@@ -5,9 +5,11 @@ Java 8
 
 * Any JDK provider functional interface
 
-## what is Lamda expressionn
-* The Lambda expression is used to provide the implementation of an interface which has functional interface.
+## What is lambda expression. Why use lambad expression, 
+* A lambda expression is an anonymous function. A function that doesn’t have a name and doesn’t belong to any class
+* A lambda expression is a function that can be referenced and passed around as an object.
 * it is a more easy way to write instance anonymous inner class or single class which implement functional interface
+* it define inline implementations of functional interfaces.
 
 ## What's the stream api, what the different between stream api and collection api
 * manipulate collections of data in a declarative way
