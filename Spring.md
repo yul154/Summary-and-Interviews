@@ -5,6 +5,9 @@ Spring
 * It achieves that by decoupling the usage of an object from its creation. 
 * you do not have to create your objects but have to describe how they should be created. You don’t connect your components and services together in the code directly, but describe which services are needed by which components in the configuration file. The IoC container will wire them up together.
 
+## Auto-configuration
+
+the Spring Boot autoconfiguration represents a way to automatically configure a Spring application based on the dependencies that are present on the classpath. This can make development faster and easier by eliminating the need for defining certain beans that are included in the auto-configuration classes.
 
 # What's the different type of autowire,what's the default type
 * ByName
