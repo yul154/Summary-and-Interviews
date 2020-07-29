@@ -54,7 +54,12 @@ Collection framework implements various interfaces, Collection interface and Map
 
 ## How hash map work internally ? What's hash algorithm what's the output of hash function, what's the hash function. 
 
-HashMap in Java works on hashing principles. It is a data structure which allows us to store object and retrieve it in constant time O(1) provided we know the key. In hashing, hash functions are used to link key and value in HashMap. Objects are stored by calling put(key, value) method of HashMap and retrieved by calling get(key) method. When we call put method, the hashcode() method of the key object is called so that the hash function of the map can find a bucket location to store value object.
+* HashMap in Java works on hashing principles. 
+* It is a data structure which allows us to store object and retrieve it in constant time O(1) provided we know the key. 
+* In hashing, hash functions are used to link key and value in HashMap. Objects are stored by calling put(key, value) method of HashMap and retrieved by calling get(key) method. When we call put method, the hashcode() method of the key object is called so that the hash function of the map can find a bucket location to store value object.
+* Hashing in its simplest form, is a way to assigning a unique code for any variable/object after applying any formula/algorithm on its properties.
+* Hash function should return the same hash code each and every time when the function is applied on same or equal objects
+
 
 ## How does HashSet is implemented in Java, How does it use Hashing?
 
@@ -62,17 +67,15 @@ HashMap in Java works on hashing principles. It is a data structure which allows
 
 * HashSet uses HashMap internally to store it’s objects. Whenever you create a HashSet object, one HashMap object associated with it is also created. This HashMap object is used to store the elements you enter in the HashSet. The elements you add into HashSet are stored as keys of this HashMap object. The value associated with those keys will be a constant.
 
-
 ## what's hash function
 * a function which when given a key, generates an address of given value.
+* Hash function should return the same hash code each and every time when the function is applied on same or equal objects
 
 ## Different key with hash function produce same value. How to solve the solutions. 
 * at some point in time hash function will return the same bucket location for two different keys, this is called collision in HashMap
 * In this case, a linked list is formed at that bucket location and a new entry is stored as the next node.
 *  If we try to retrieve an object from this linked list, we need an extra check to search the correct value, this is done by equals() method
 * HashMap keeps comparing entry's key object with the passed key using equals() and when it returns true, Map returns the corresponding value.
-
-
 * If two keys of HashMap return the same hash code, then they will end up in the same bucket; hence collision will occur. They will be stored in a linked list together.
 * handles the collision resolution by using the concept of chaining
 * equals() will be used to distinguish them. Each bucket can contain a list of objects with the same hash code.
@@ -109,8 +112,6 @@ Sorting is implemented using Comparable and Comparator in Java and when you call
 * If there is already a string literal “Cat” in the pool, then only one string “str” will be created in the pool. 
 * If there is no string literal “Cat” in the pool, then it will be first created in the pool and then in the heap space, so a total of 2 string objects will be created.
 
-
-
 ## Difference between String literal and New String object in Java
 * When you create String object using new() operator, it always create a new object in heap memory.
 * if you create object using String literal syntax. it may return an existing object from String pool,if it's already exists. Otherwise it will create a new string object and put in string pool for future reuse.
@@ -129,6 +130,7 @@ System.out.println(a == b); false //different objects are created and they have 
 # Object Oriented Programming
 
 ## What Are OOP Concepts in Java?
+
 * Object-oriented programming System(OOPs) is a programming paradigm based on the concept of “objects” that contain data and methods.
 * Object oriented programming brings together data and its behaviour(methods) in a single location(object) makes it easier to understand how a program works.
 * There are four main OOP concepts in Java
