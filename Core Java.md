@@ -98,8 +98,49 @@ HashMap in Java works on hashing principles. It is a data structure which allows
 
 Sorting is implemented using Comparable and Comparator in Java and when you call Collections.sort() it gets sorted based on the natural order specified in compareTo() method while Collections.sort(Comparator) will sort objects based on compare() method of Comparator. 
 
+
+## String Pool
+* The Java string constant pool is an area in heap memory where Java stores literal string values
+* When we use double quotes to create a String, it first looks for String with the same value in the String pool, if found it just returns the reference else it creates a new String in the pool and then returns the reference.
+
+##  How many Strings are getting Created in the String Pool?
+`String str = new String("Cat");`
+
+* If there is already a string literal “Cat” in the pool, then only one string “str” will be created in the pool. 
+* If there is no string literal “Cat” in the pool, then it will be first created in the pool and then in the heap space, so a total of 2 string objects will be created.
+
+
+
+## Difference between String literal and New String object in Java
+* When you create String object using new() operator, it always create a new object in heap memory.
+* if you create object using String literal syntax. it may return an existing object from String pool,if it's already exists. Otherwise it will create a new string object and put in string pool for future reuse.
+
+```
+String a = "xyz"// When we use double quotes to create a String, it first looks for String with the same value in the String pool, if found it just returns the reference else it creates a new String in the pool and then returns the reference.
+
+String b = new String("xyz")// force JVM to create a new String reference, even if "xyz" is in its pool.
+
+System.out.println(a == b); false //different objects are created and they have different references:
+```
+
+<img width="367" alt="Screen Shot 2020-07-29 at 10 46 40 AM" src="https://user-images.githubusercontent.com/27160394/88821903-d1923980-d188-11ea-8fbf-f888e825093c.png">
+
 ---
 # Object Oriented Programming
+
+## What Are OOP Concepts in Java?
+* Object-oriented programming System(OOPs) is a programming paradigm based on the concept of “objects” that contain data and methods.
+* Object oriented programming brings together data and its behaviour(methods) in a single location(object) makes it easier to understand how a program works.
+* There are four main OOP concepts in Java
+1. Abstraction: Abstraction is a process where you show only “relevant” data and “hide” unnecessary details of an object from the user. In java, abstraction is achieved by interfaces and abstract classes
+2. Encapsulation: keeping fields within a class private, then providing access to them via public methods. It’s a protective barrier that keeps the data and code safe within the class itself.
+3. Inheritance:  It lets programmers create new classes that share some of the attributes of existing classes. 
+4. Polymorphism:  lets programmers use the same word to mean different things in different contexts. Two form of polymorphism, method overloading,method overriding
+
+## 	What is polymorphism mean ? How to implement it in code
+* Polymorphism is Subclasses of a class can define their own unique behaviors and yet share some of the same functionality of the parent class.
+* Polymorphism in Java has two types: Compile time polymorphism (static binding, overloading) and Runtime polymorphism (dynamic binding, overriding)
+* Covariant return type: You can override a method with the same signature but returns a subclass of the object returned.
 
 ##  What's the immutable class, why would we use immutable class
 * Immutable class means that once an object is created, we cannot change its content. 
@@ -198,14 +239,36 @@ Sorting is implemented using Comparable and Comparator in Java and when you call
 * Volatile in java is a keyword which is used in variable declaration only and cannot be used with method. 
 * synchronization keyword is used in method declaration or can be used to create synchronization blocks.
 * Volatile variables are lock free which means that it does require any lock on variable or object whereas synchronized requires lock on method or block .
-* 
+
 
 ## Join
 * Thread class provides the join() method which allows one thread to wait until another thread completes its execution.
 ---
 # Exception Handling 
 
-## Different Erro and Exception
+## How to handle exception?
+* Try-Catch-Finally：
+1. a try block that encloses the code section which might throw an exception,
+2. one or more catch blocks that handle the exceptions
+3. The finally block gets executed after the successful execution of the try block or after one of the catch blocks handled an exception
+
+## if return in catch block, finally block will execute ？ 
+If try/catch blocks have a return statement, even then the finally block executes!
+* If finally block has a return statement, then the return statements from try/catch blocks will be overridden.
+
+```
+howdy from catch block
+howdy from Finally block
+returning from catch block
+```
+
+## 	Any scenario, the final will not execute
+1. if you call System.exit()
+2. if the JVM crashes first
+3. if there is an infinite loop in the try block
+
+
+## Different Error and Exception
 
 * The error indicates a problem that mainly occurs due to the lack of system resources and our application should not catch these types of problems
 * Exceptions are the problems which can occur at runtime and compile time. It mainly occurs in the code written by the developers
