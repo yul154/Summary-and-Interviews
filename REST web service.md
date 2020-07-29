@@ -50,6 +50,8 @@ In most cases, the design of a so-called RESTful API consists of:
 5. Layered System
 
 
+## 	What is query parameters
+* You can use query parameters to control what data is returned in endpoint responses.
 
 ## @pathvariable and @requestparam
 1. @RequestParam used for accessing the values of the query parameters , @PathVariable used for accessing the values from the URI template.
