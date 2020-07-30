@@ -1,4 +1,7 @@
 # Spring 
+* Core Spring
+* Sprng Boot
+* Spring MVC
 
 ## what is Spring framework
 
@@ -13,8 +16,13 @@ Spring is the most broadly used framework for the development of Java Enterprise
 3. Spring framework is both complete and modular, because spring framework has a layered architecture.
 4. It gives good support for IoC and Dependency Injection results in loose coupling.
 
+## What is IOC containter
+* The container will create the objects, wire them together, configure them, and manage their complete life cycle
+* The Spring container uses DI to manage the components that make up an application.
 
 ## What Is Dependency Injection?
+
+* Java components / classes should be as independent as possible of other Java classes. This increases the possibility to reuse these classes and to test them independently of other classes(Unit Testing). To decouple Java components from other Java components the dependency to a certain other class should get injected into them rather that the class itself creates / finds this object
 
 Dependency Injection, an aspect of Inversion of Control (IoC), is a general concept stating that you do not create your objects manually but instead describe how they should be created. An IoC container will instantiate required classes if needed.
 
