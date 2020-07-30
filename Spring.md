@@ -1,15 +1,71 @@
-Spring 
+# Spring 
 
-## Why do you use spring framework
-* Dependency injection is a programming technique that makes a class independent of its dependencies. 
-* It achieves that by decoupling the usage of an object from its creation. 
-* you do not have to create your objects but have to describe how they should be created. You don’t connect your components and services together in the code directly, but describe which services are needed by which components in the configuration file. The IoC container will wire them up together.
+## what is Spring framework
+
+Spring is the most broadly used framework for the development of Java Enterprise Edition applications. The core features of Spring can be used in developing any Java application.
+
+* Spring framework is an open source Java platform. Spring makes use of Inversion of Control and Dependency Injection to promote good software coding practices and speed up development time.
+
+## What Are the Benefits of Using Spring?
+
+1. Spring comes with some of the existing technologies like ORM framework, logging framework, J2EE and JDK Timers etc, Hence we don’t need to integrate explicitly those technologies.
+2. Spring WEB framework has a well-designed web MVC framework, which provides a great alternate to web framework.
+3. Spring framework is both complete and modular, because spring framework has a layered architecture.
+4. It gives good support for IoC and Dependency Injection results in loose coupling.
+
+
+## What Is Dependency Injection?
+
+Dependency Injection, an aspect of Inversion of Control (IoC), is a general concept stating that you do not create your objects manually but instead describe how they should be created. An IoC container will instantiate required classes if needed.
+
+
+## What is Tight Coupling?  What is Loose Coupling?
+* When a class (ClassA) is dependent on another class’s object (ClassB), then we say ClassA is "tightly" Coupled with ClassB
+* Loose Coupling removes the dependency of an object (ClassB) on a class (ClassA). Loose Coupling is approached by creating an interface and a setter & getter method, or by using a constructor which takes the interface object.
+
+## What is bean in Spring and how to inject beans in Spring
+* The Spring Beans are Java Objects that are initialized by the Spring IoC container.
+1. Setter Injection
+2. Constructor Injection
+3. Field Injection
+
+## Spring Bean Lifecycle
+* Spring will take over the control of a bean life cycle using ApplicationContext or BeanFactory interfaces.
+
+<img width="312" alt="Screen Shot 2020-07-30 at 10 42 58 AM" src="https://user-images.githubusercontent.com/27160394/88943713-70826880-d251-11ea-9b3b-7bc8e9b12824.png">
+
+
+
+# Spring Boot
+
+
+## What is spring boot?
+* Spring Boot is a project that provides a pre-configured set of frameworks to reduce boilerplate configuration so that you can have a Spring application up and running with the smallest amount of code.
+
+* Spring-based applications have a lot of configuration (boiler-plate code). In Spring MVC, a lot of configuration is required (like component scan, dispatcher servlet, view resolver, etc). Whereas, in Spring Boot the boiler-plate code is not required.
+
+
+## Benefits of Spring Boot?
+
+
+## Name Some of the Design Patterns Used in the Spring Framework?
+```
+Singleton Pattern: Singleton-scoped beans
+Factory Pattern: Bean Factory classes
+Prototype Pattern: Prototype-scoped beans
+Adapter Pattern: Spring Web and Spring MVC
+Proxy Pattern: Spring Aspect Oriented Programming support
+Template Method Pattern: JdbcTemplate, HibernateTemplate, etc.
+Front Controller: Spring MVC DispatcherServlet
+Data Access Object: Spring DAO support
+Model View Controller: Spring MVC
+```
 
 ## Auto-configuration
 
 the Spring Boot autoconfiguration represents a way to automatically configure a Spring application based on the dependencies that are present on the classpath. This can make development faster and easier by eliminating the need for defining certain beans that are included in the auto-configuration classes.
 
-# What's the different type of autowire,what's the default type
+## What's the different type of autowire,what's the default type
 * ByName
 * ByType
 * The default autowiring is "no". 
@@ -46,21 +102,33 @@ the Spring Boot autoconfiguration represents a way to automatically configure a 
 3. @ComponentScan : @ComponentScan without arguments indicates Spring to scan the current package and all of its sub-packages.
 
 
-
-## Spring mvc
+--- 
+# Spring mvc
 
 * What is DispatcherServlet?
 
 1. is designed around a central Servlet that handles all the HTTP requests and responses
 
-2. On receiving an HTTP request, the DispatcherServlet consults HandlerMapping (these are the configuration files) to call the appropriate Controller. Then, the controller calls appropriate service methods to set the Model data. It also returns the view name to DispatcherServlet. DispatcherServlet, with the help of ViewResolver, picks up the defined view for the request. Once the view is finalized, the DispatcherServlet passes the Model data to View – where it is finally rendered on the browser.
+(i)  The browser sends a request to DispatcherServlet
 
+(ii) DispatcherServlet knows the HanderMapping and can find the appropriate controllers
+
+(iii) Controllers execute the request and put the data in the model and return back the view name to the DispatcherServlet.
+
+(iv) DispatcherServlet uses the view name and ViewResolver to map to the view.
+
+## What Is a Controller in Spring Mvc?
+* Front Controller: provide a centralized request handling mechanism so that all requests will be handled by a single handler
+* Each controller class maps one or more requests to methods that process and execute the requests with provided inputs.
 
 ## What do you mean by a “Bean” in the context of Spring framework?
 Any class that is initialised by the IoC container is known as a bean in Spring. The lifecycle of a Spring Bean is managed by Spring IoC Container.
 
 ## What Is the Role of the @Autowired Annotation?
 The @Autowired annotation can be used with fields or methods for injecting a bean by type. This annotation allows Spring to resolve and inject collaborating beans into your bean.
+
+##  How Does the @Requestmapping Annotation Work?
+* The @RequestMapping annotation is used to map web requests to Spring Controller methods
 
 ##  Explain a Model Attribute
 It binds a method parameter or a method return value to a named model attribute and then exposes it to a web view.
