@@ -1,10 +1,16 @@
 Java 8 
+---
+
+# Lambda
 
 ## What is lambda expression. Why use lambad expression, 
 * A lambda expression is an anonymous function. A function that doesn’t have a name and doesn’t belong to any class
 * A lambda expression is a function that can be referenced and passed around as an object.
 * it is a more easy way to write instance anonymous inner class or single class which implement functional interface
 * it define inline implementations of functional interfaces.
+
+---
+# Stream
 
 ## What's the stream api, what the different between stream api and collection api
 * manipulate collections of data in a declarative way
@@ -55,7 +61,7 @@ Java 8
 * Before Java 8, interfaces could have only abstract methods. The implementation of these methods has to be provided in a separate class. So, if a new method is to be added in an interface, then its implementation code has to be provided in the class implementing the same interface. 
 * Allows the developer to add new methods to the interfaces without breaking their existing implementation.
 ---
-# # Sorted method in java8 and java 6
+# Sorted method in java8 and java 6
 
 * Java 8 provides new ways of defining Comparators by using lambda expressions and the comparing() static factory method.
 ```
