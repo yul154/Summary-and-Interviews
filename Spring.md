@@ -3,12 +3,11 @@
 * Sprng Boot
 * Spring MVC
 
-## what is Spring framework
+## What is Spring framework
 
 Spring is the most broadly used framework for the development of Java Enterprise Edition applications. The core features of Spring can be used in developing any Java application.
 
 * Spring framework is an open source Java platform. Spring makes use of Inversion of Control and Dependency Injection to promote good software coding practices and speed up development time.
-
 
 ## What Are the Benefits of Using Spring?
 
@@ -20,6 +19,20 @@ Spring is the most broadly used framework for the development of Java Enterprise
 ## What is IOC containter
 * The container will create the objects, wire them together, configure them, and manage their complete life cycle
 * The Spring container uses DI to manage the components that make up an application.
+1. Find Beans
+2. Identify their dependencies and wire the dependencies
+3. Manage Lifecycle of the Bean (creation, processing, and destruction)
+
+## What is Application Context?
+* It is an advanced version of IOC Container.
+* It provides all the functionalities of Bean Factory and also provides things like AOP, Internationalization capabilities, web application context (request, session, etc).
+
+## Explain the process of creating an ApplicationContext in Spring.
+
+* The ApplicationContext can be defined in two ways 
+1.using XML:the ApplicationContext is created using new ClassPathXmlApplicationContext.The ClassPathXmlApplicationContext looks for the XML files,
+2. using @Configuration:use AnnotationConfigApplicationContext.
+
 
 ## What Is Dependency Injection?
 
@@ -33,13 +46,17 @@ Spring is the most broadly used framework for the development of Java Enterprise
 
 Dependency Injection, an aspect of Inversion of Control (IoC), is a general concept stating that you do not create your objects manually but instead describe how they should be created. An IoC container will instantiate required classes if needed.
 
+
+## What is IOC
+* In Tight Coupling the dependent class takes the responsibility of creating its dependency. Whereas, in Loose Coupling, we use @Autowired annotation over the dependency class (or reference) and Spring takes control of creating the instance and injects the dependency.
+
 ## What is Tight Coupling?  What is Loose Coupling?
 
 * When a class (ClassA) is dependent on another class’s object (ClassB), then we say ClassA is "tightly" Coupled with ClassB
 * Loose Coupling removes the dependency of an object (ClassB) on a class (ClassA). Loose Coupling is approached by creating an interface and a setter & getter method, or by using a constructor which takes the interface object.
 
 ## What is bean in Spring and how to inject beans in Spring
-* The Spring Beans are Java Objects that are initialized by the Spring IoC container.
+* A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container
 1. Setter Injection
 2. Constructor Injection
 3. Field Injection
@@ -57,6 +74,8 @@ Dependency Injection, an aspect of Inversion of Control (IoC), is a general conc
 4. Session: Scopes a single bean definition to the lifecycle of a HTTP Session. 
 5. Global-session: Scopes a single bean definition to the lifecycle of a global HTTP Session. 
 
+## What is Dirty Read?
+* When a transaction (t1) is meant to read the changes that are performed by another transaction (t2) and provided transaction t2 is not committed yet; then in such a situation, the transaction t1 is called Dirty Read transaction.
 ---
 
 # Spring Boot
@@ -84,6 +103,12 @@ the Spring Boot autoconfiguration represents a way to automatically configure a 
 * ByType
 * The default autowiring is "no". 
 
+## What are the limitations with autowiring?
+* Overriding possibility − You can still specify dependencies using <constructor-arg> and <property> settings which will always override autowiring.
+
+* Primitive data types − You cannot autowire so-called simple properties such as primitives, Strings, and Classes.
+
+* Confusing nature − Autowiring is less exact than explicit wiring, so if possible prefer using explicit wiring.
 
 ## What's unqile exception for same type autwoire injection
 
