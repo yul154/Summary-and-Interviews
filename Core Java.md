@@ -7,12 +7,12 @@
 * EXCEPTION HANDLING
 
 ---
-# Can you explain what JVM is? Can you use this on any platform that you choose?
+## Can you explain what JVM is? Can you use this on any platform that you choose?
 * JVM stands for Java Virtual Machine. You need the JVM to run any Java application. Without it, the application fails and the user is unable to access it.
 
-# Just In Time compiler 
+## Just In Time compiler 
 * Java uses Just In Time compiler to enable high performance. It is used to convert the instructions into bytecodes.
-
+---
 
 
 # Collection Framework
