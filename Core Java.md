@@ -1,4 +1,5 @@
 # Core Java 
+* Basic Java Knowledge
 * Java Collection framework
 * Object Oriented Programming
 * Multithreading 
@@ -6,6 +7,14 @@
 * EXCEPTION HANDLING
 
 ---
+# Can you explain what JVM is? Can you use this on any platform that you choose?
+* JVM stands for Java Virtual Machine. You need the JVM to run any Java application. Without it, the application fails and the user is unable to access it.
+
+# Just In Time compiler 
+* Java uses Just In Time compiler to enable high performance. It is used to convert the instructions into bytecodes.
+
+
+
 # Collection Framework
 
 ## briefly Collection framework
@@ -89,9 +98,6 @@ Collection framework implements various interfaces, Collection interface and Map
 ##  Why use hashmap
 * HashMap are efficient for locating a value based on a key and inserting and deleting values based on a key
 
-## What is the difference between HashMap and HashSet? 
-
-
 ## What is the difference between Comparable and Comparator?
 * Comparable provides only one sort of sequence.The Comparator provides multiple sorts of sequences.
 * It provides one method named compareTo().It provides one method named compare().
@@ -100,6 +106,14 @@ Collection framework implements various interfaces, Collection interface and Map
 ## How do you Sort objects on the collection?
 
 Sorting is implemented using Comparable and Comparator in Java and when you call Collections.sort() it gets sorted based on the natural order specified in compareTo() method while Collections.sort(Comparator) will sort objects based on compare() method of Comparator. 
+
+# Strinng
+
+## Difference between String, String Builder, and String Buffer.
+* The String class is an immutable class 
+*  whereas StringBuffer and StringBuilder classes are mutable
+* StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.
+* StringBuilder is non-synchronized i.e. not thread safe.
 
 
 ## String Pool
@@ -160,11 +174,18 @@ System.out.println(a == b); false //different objects are created and they have 
 
 ##  Different between abstract class and interface
 * Interface supports multiple inheritance. Abstract class doesn't support multiple inheritance.
+* Classes that implement the interface should provide the implementation for all the methods.
 * Interface has only static and final variables. Abstract class can have final, non-final, static and non-static variables.
-* Abstract class can provide the implementation of interface.Interface can't provide the implementation of abstract class.
+* Abstract class can provide the implementation of method. Interface can't provide the implementation of abstract class.
 * An interface can extend another Java interface only. An abstract class can extend another Java class and implement multiple Java interfaces.
 * Abstract class can have abstract and non-abstract methods.Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
 
+## What is meant by Abstract class?
+* We can create the Abstract class by using the “Abstract” keyword before the class name. An abstract class can have both “Abstract” methods and “Non-abstract” methods that are a concrete class.
+
+## What is meant by Interface?
+* Multiple inheritances cannot be achieved in java. To overcome this problem Interface concept is introduced.
+* An interface is a template which has only method declarations and not the method implementation.
 
 ## What is the difference between Polymorphism and Inheritance?
 
@@ -172,6 +193,15 @@ System.out.println(a == b); false //different objects are created and they have 
 *  Java doesn't allow multiple inheritance of classes, but allows multiple inheritance of Interface, which is actually required to implement Polymorphism
 * Inheritance is basically implemented on classes.Polymorphism is basically implemented on function/methods
 
+## What is an Object?
+* An instance of a class is called an object. The object has state and behavior.
+
+Whenever the JVM reads the “new()” keyword then it will create an instance of that class.
+
+
+## Difference between Default and Protected access specifiers.
+* The protected data members,protected methods of a class will be visible to the other Classes if they resides in same package
+* Default restricts the access only to package level , even after extending the class having default data members ,we won't be able to access.
 
 ## Aggregation, Association and Composition
 
@@ -188,9 +218,15 @@ System.out.println(a == b); false //different objects are created and they have 
 ---
 # Multithreading 
 * Have you use multithread
+
 ## What is multithreading?
 * two or more threads run concurrently
 
+## What is a Thread?
+* In Java, the flow of execution is called Thread
+* Every java program has at least one thread called the main thread, the main thread is created by JVM. Th
+*  The user can define their own threads by extending the Thread class (or) by implementing the Runnable interface. 
+* Threads are executed concurrently.
 ## Java Thread status
 * NEW - A thread that has not yet started is in this state.
 * RUNNABLE - A thread executing in the Java virtual machine is in this state.
@@ -200,20 +236,41 @@ System.out.println(a == b); false //different objects are created and they have 
 * TERMINATED - A thread that has exited is in this state.
 
 ## Thread Life-cycle
-* New
-* Runnable
-* Running
-* Non-Runnable (Blocked)
-* Terminated
+* New:  A Thread instance has been created but start () method is not yet invoked
+* Runnable: The Thread is in the runnable state after the invocation of the start () method, but before the run () method is invoked
+* Running: The thread is in running state after it calls the run () method. Now the thread begins the execution.
+* Non-Runnable (Blocked): The thread is alive but it is not eligible to run
+* Terminated:Once the run method is completed then it is terminated.
 
 ## How to create a thread
 1. implement Runnable interface
 2. extends Thread class
 
+## Explain about join () method.
+* Join () method is used to join one thread with the end of the currently running thread.
+
+## What does the yield method of the Thread class do?
+*  A yield () method moves the currently running thread to a  runnable state and allows the other threads for execution
+
+## Explain about wait () method.
+* wait () method is used to make the thread to wait in the waiting pool.
+* When the wait () method is executed during a thread execution then immediately the thread gives up the lock on the object and goes to the waiting pool.
+* Wait () method tells the thread to wait for a given amount of time.
+* the thread will wake up after notify () (or) notify all () method is called.
+
+## Difference between notify() method and notifyAll() method in Java.
+* `notify()`: used to send a signal to wake up a single thread in the waiting pool.
+* `norifyAll()`: This method sends the signal to wake up all the threads in a waiting pool.
+
 ## The difference between the Runnable and Callable interfaces in Java
 * Callable(): represents a task that is intended to be executed concurrently by a separate thread.
 * A Callable can return a value but a Runnable cannot.
 * A Callable can throw checked exception but a Runnable cannot.
+
+## Difference between start() and run() method of thread class.
+
+* `Start()` method creates a new thread and the code inside the run () method is executed in the new thread. 
+* If we directly called the `run()` method then a new thread is not created and the currently executing thread will continue to execute the run() method.
 
 ## synchronized vs unsynchronized java
 
@@ -242,11 +299,18 @@ System.out.println(a == b); false //different objects are created and they have 
 * synchronization keyword is used in method declaration or can be used to create synchronization blocks.
 * Volatile variables are lock free which means that it does require any lock on variable or object whereas synchronized requires lock on method or block .
 
-
-## Join
-* Thread class provides the join() method which allows one thread to wait until another thread completes its execution.
 ---
 # Exception Handling 
+
+##  What is meant by Exception?
+* An Exception is a problem that can occur during the normal flow of execution.
+
+## What's the check exception and uncheck exception.
+
+* checked exceptions: These exceptions are checked by the compiler at the time of compilation.Checked Exceptions must either declare the exception using throws keyword (or) surrounded by appropriate try/catch.
+
+* unchecked exceptions are occurred during runtime and used to indicate programming errors 
+
 
 ## How to handle exception?
 * Try-Catch-Finally：
@@ -254,6 +318,7 @@ System.out.println(a == b); false //different objects are created and they have 
 2. one or more catch blocks that handle the exceptions
 3. The finally block gets executed after the successful execution of the try block or after one of the catch blocks handled an exception
 
+* By declaring throws keyword:At the end of the method, we can declare the exception using throws keyword.
 ## if return in catch block, finally block will execute ？ 
 If try/catch blocks have a return statement, even then the finally block executes!
 * If finally block has a return statement, then the return statements from try/catch blocks will be overridden.
@@ -278,10 +343,6 @@ returning from catch block
 * Common errors: `java.lang.StackOverflowError`, `java.lang.OutOfMemoryError`
 * Common Excepetions: Unchecked- `ArrayIndexOutOfBoundException`,`NullPointerException`, `ArithmeticException`.Checked - `IOException`,`FileNotFoundException`
 
-## What's the check exception and uncheck exception.
-
-* checked exceptions are forced by compiler and used to indicate exceptional conditions that are out of the control of the program (for example, I/O errors), 
-* unchecked exceptions are occurred during runtime and used to indicate programming errors 
 
 ## The differences between throw and throws 
 * throws clause is used to declare an exception, throw keyword is used to throw an exception explicitly.
@@ -298,9 +359,12 @@ returning from catch block
 
 ## Java classloader
 * BootStrap ClassLoader: A Bootstrap Classloader is a Machine code which kickstarts the operation when the JVM calls it. It is not a java class. Its job is to load the first pure Java ClassLoader. Bootstrap ClassLoader loads classes from the location rt.jar. Bootstrap ClassLoader doesn’t have any parent ClassLoaders. It is also called as the Primodial ClassLoader.
+
 * Extension ClassLoader: The Extension ClassLoader is a child of Bootstrap ClassLoader and loads the extensions of core java classes from the respective JDK Extension library. It loads files from jre/lib/ext directory or any other directory pointed by the system property java.ext.dirs.
+
 * System ClassLoader: An Application ClassLoader is also known as a System ClassLoader. It loads the Application type classes found in the environment variable CLASSPATH, -classpath or -cp command line option. The Application ClassLoader is a child class of Extension ClassLoader.
 Class loader method
+
 * loadClass(String name, boolean resolve): This method is used to load the classes which are referenced by the JVM. It takes the name of the class as a parameter. This is of type loadClass(String, boolean).
 
 
