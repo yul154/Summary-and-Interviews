@@ -1,6 +1,9 @@
 # Rest Web Service
 
-# What is REST API?
+## What are RESTful webservices? 
+REST is a stateless client-server architecture where web services are resources and can be identified by their URIs. Client applications can use HTTP GET/POST methods to invoke Restful web services.
+
+## What is REST API?
 
  * Representational State Transfer a.k.a REST is an architectural style as well as an approach for communications purpose that is often used in various web services development.
  * It defines a set of principles that a system must comply with in order to get some benefits such as loose coupling between the client and the server, scalability, reliability, and better performance.
@@ -20,7 +23,6 @@ In most cases, the design of a so-called RESTful API consists of:
 4. REST calls can be cached, SOAP-based calls cannot be cached.
 5. SOAP web services are hard to maintain, any change in WSDL contract requires us to create client stubs again,REST web services are easy to maintain when compared to SOAP, a new method can be added without any change at client side for existing resources.
 6. SOAP is more secure than REST as it uses WS-Security for transmission along with Secure Socket Layer.
-
 
 
 # Rest characteristics
@@ -109,6 +111,8 @@ The word "idempotent" means that any number of repeated, identical requests will
 * PUT is for checking if resource is exists then update , else create new resource
 * PATCH is always for update a resource
 *  POST is NOT idempotent. GET , PUT , DELETE , HEAD , OPTIONS and TRACE are idempotent.A PATCH is not necessarily idempotent
+
+
 ##  Do you know what's different http methods
 
 
@@ -119,6 +123,14 @@ The word "idempotent" means that any number of repeated, identical requests will
 3. HTTP Version − Indicates the HTTP version.
 4. Request Header − Contains metadata for the HTTP Request message as key-value pairs.
 5. Request Body − Message content or Resource representation.
+
+## What are the core components of a HTTP response?
+
+1. Status/Response Code − Indicate Server status for the requested resource. For example 404 means resource not found and 200 means response is ok.
+2. HTTP Version − Indicate HTTP version, for example HTTP v1.1 .
+3. Response Header − Contains metadata for the HTTP Response message as key-value pairs. For example, content length, content type, response date, server type etc.
+4. Response Body − Response message content or Resource representation.
+
 
 ##  HTTP status code
 1. Informational responses (100–199), 100 Continue,101 Switching Protocols
