@@ -385,7 +385,9 @@ Template Pattern: For consistence vocabulary and naming convention for business 
 * Factory Pattern: it does so without specifying the exact class of the object to be created. To accomplish this, objects are created by calling a factory method instead of calling a constructor. without necessarily knowing what kind of object it creates or how to create it.
 * Observer: one-to-many dependency between objects so that when one object changes state, all its dependents are notified.It is used when there is one to many relationship between objects such as if one object is modified, its dependent objects are to be notified automatically and corresponding changes are done to all dependent objects.
 * An Adapter pattern:  acts as a connector between two incompatible interfaces that otherwise cannot be connected directly
-
+* Visitor: The purpose of a Visitor pattern is to define a new operation without introducing the modifications to an existing object structure.
+* Protype:allows us to hide the complexity of making new instances from the client. The concept is to copy an existing object rather than creating a new instance from scratch, something that may include costly operations.
+* Decorator: allows us to dynamically add functionality and behavior to an object without affecting the behavior of other existing objects in the same class. 
 
 ### decorative design pattern
 * Decorator pattern allows a user to add new functionality to an existing object without altering its structure.
